@@ -339,6 +339,35 @@ input[type="range"].gradient::-webkit-slider-thumb {
 	margin-top: -4px;
 }
 
+/*
+ * On touch screens the sliders cover most of the scrolling panel, so a swipe that
+ * starts on a track would jump the slider instead of scrolling. There only the thumb
+ * takes touches, and it grows a little since it is now the only place to grab.
+ */
+@media (pointer: coarse) {
+	input[type="range"] {
+		height: 24px;
+		pointer-events: none;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		width: 24px;
+		height: 24px;
+		margin-top: -9px;
+		pointer-events: auto;
+	}
+
+	input[type="range"]::-moz-range-thumb {
+		width: 20px;
+		height: 20px;
+		pointer-events: auto;
+	}
+
+	input[type="range"].gradient::-webkit-slider-thumb {
+		margin-top: -7px;
+	}
+}
+
 /* ---------- Palette ---------- */
 
 .swatches {
