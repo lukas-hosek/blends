@@ -92,7 +92,7 @@
 			shading: 0.5,
 			vignetteStrength: 0.95,
 			vignetteFalloff: "smoother",
-			grain: 0.5,
+			grain: 0.2,
 			outputSize: "screen",
 			customWidth: 2560,
 			customHeight: 1440,
