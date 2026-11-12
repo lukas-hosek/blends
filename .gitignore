@@ -1,0 +1,48 @@
+# Claude Code — local agent config, transcripts and settings
+.claude/
+
+# Editor / IDE
+# .vscode/settings.json is shared on purpose (see the file); the rest is personal.
+.vscode/*
+!.vscode/settings.json
+.vscode-test/
+*.code-workspace
+.idea/
+*.swp
+*~
+
+# Perforce leftovers (this repo is Git; the depot history is not)
+.p4config
+.p4ignore
+*.p4
+# Perforce writes these next to files it could not merge
+*.bak
+*.orig
+*.rej
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+._*
+
+# Node, should a tool or local server ever be added
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# Local output
+dist/
+build/
+out/
+*.log
+*.tmp
+
+# Generated wallpapers, if any are saved into the working copy.
+# Deliberately scoped to these folders rather than ignoring *.png everywhere,
+# so real assets can still be committed.
+exports/
+wallpapers/
+screenshots/

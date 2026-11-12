@@ -1,0 +1,43 @@
+{
+	// ---- Source control -------------------------------------------------
+	// This repository uses Git, not Perforce. Keep the Perforce extension from
+	// attaching to this workspace and reporting every file as "not in depot".
+	"perforce.activationMode": "off",
+	"perforce.enable": false,
+	"git.enabled": true,
+
+	// ---- Whitespace -----------------------------------------------------
+	// The whole project is indented with real tabs, rendered four columns wide.
+	// detectIndentation is off so a file that happens to open with spaces does
+	// not quietly switch the editor over.
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"editor.detectIndentation": false,
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+
+	// ---- Formatting -----------------------------------------------------
+	// No formatter is configured on purpose. The sources use hand-aligned
+	// columns (see the MOODS table in js/palettes.js) that any automatic
+	// formatter would collapse, so format-on-save stays off everywhere.
+	"editor.formatOnSave": false,
+	"editor.formatOnPaste": false,
+
+	// ---- Language services ----------------------------------------------
+	// Plain scripts sharing one `window.Blends` global, no modules and no build
+	// step, so checkJs would flag cross-file references it cannot resolve.
+	"js/ts.validate.enabled": true,
+	"js/ts.implicitProjectConfig.checkJs": false,
+	"html.format.wrapLineLength": 0,
+	"css.lint.unknownAtRules": "ignore",
+
+	// ---- Workspace ------------------------------------------------------
+	"files.exclude": {
+		"**/.git": true
+	},
+	"search.exclude": {
+		"**/.claude": true
+	}
+}
