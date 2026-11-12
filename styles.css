@@ -423,20 +423,18 @@ input[type="range"].gradient::-webkit-slider-thumb {
 
 /* ---------- Small screens ---------- */
 
+/*
+ * The page itself never scrolls here; only the panel does. That keeps the preview
+ * in view while the settings below it are being adjusted.
+ */
 @media (max-width: 820px) {
-	html,
-	body {
-		height: auto;
-	}
-
+	/* A bare fr row cannot shrink below its content, so the long panel would stretch its row past one third. */
 	.app {
-		grid-template-columns: 1fr;
-		height: auto;
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: minmax(0, 2fr) minmax(0, 1fr);
 	}
 
-	/* The stage needs a definite height for the preview to fit into. */
 	.stage {
-		height: min(62vh, 560px);
 		padding: 18px;
 	}
 
@@ -444,8 +442,9 @@ input[type="range"].gradient::-webkit-slider-thumb {
 		display: none;
 	}
 
+	/* Contained, so swiping past the top of the panel cannot pull-to-refresh away the wallpaper. */
 	.panel {
-		overflow: visible;
+		overscroll-behavior: contain;
 		border-top: 1px solid var(--line);
 		border-left: 0;
 	}
